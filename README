@@ -1,0 +1,39 @@
+# dux
+
+dux is replacement of UNIX du(1) with nice output.
+Using dux is good to quickly find out which dirs are heaviest one
+
+## Usage
+
+`$ dux -P3 ~/`
+
+this will print directories giving >= 3% to total space.
+For example, on my machine it will output:
+
+`/home/dkrot/ [32.1G, 100%]`
+` \_ smr [14.7G, 45%]`
+` |   \_ src [10.1G, 31%]`
+` |   |   \_ testsuite [2.8G, 8%]`
+` |   |   \_ .svn [2.6G, 8%]`
+` |   |   |   \_ pristine [2.5G, 7%]`
+` |   |   \_ projects [1.6G, 4%]`
+` |   |   \_ bin [1.3G, 4%]`
+` |   \_ build [4.6G, 14%]`
+` |       \_ projects [2.6G, 8%]`
+` \_ .clion10 [7.1G, 22%]`
+` |   \_ system [7.1G, 22%]`
+` |       \_ cmake [6.6G, 20%]`
+` |           \_ generated [6.6G, 20%]`
+` |               \_ eed9becd [6.6G, 20%]`
+` |                   \_ eed9becd [6.6G, 20%]`
+` |                       \_ MinSizeRel [1.7G, 5%]`
+` |                       |   \_ contrib [1.0G, 3%]`
+` |                       \_ RelWithDebInfo [1.4G, 4%]`
+` |                       \_ Debug [1.4G, 4%]`
+` |                       \_ Release [1.4G, 4%]`
+` \_ Yandex.Disk [4.4G, 13%]`
+` |   \_ Camera Uploads [3.4G, 10%]`
+` \_ Downloads [2.5G, 7%]`
+` \_ build [1.2G, 3%]`
+
+And I can easily see, what I forgot to remove CLion parsed data (7Gb) :-)
