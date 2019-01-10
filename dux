@@ -23,7 +23,11 @@ class Directory:
 
         # perform research for collected subdirs too
         for d in self.subdirs:
-            d.research()
+            try:
+                d.research()
+            except OSError:
+                # TODO: make this skip optional
+                pass
 
     def get_size(self):
         if self.subdir_size == -1:
